@@ -1,0 +1,299 @@
+* {
+    background-color: black;
+    color: aliceblue;
+}
+
+
+.imgGyokai {
+    height: 140px;
+    width: auto;
+}
+
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 30px 10px;
+}
+
+
+.resumo {
+    display: flex;
+    flex-direction: row;       /* imagem à esquerda, texto à direita */
+    align-items: center;
+    max-width: 1100px;
+    gap: 40px;
+    padding: 170px;
+    padding-bottom: 300px;
+}
+ 
+
+.animaçao {
+    margin: 50px 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Transição suave */
+    /* Estado inicial: Escondido e deslocado */
+    opacity: 0;
+    transform: translateY(50px); /* Exemplo: 50px para baixo */
+}
+
+.animaçao.visivel {
+    opacity: 1;
+    transform: translateY(0); /* Volta para a posição original */
+}
+
+
+/* --------------------------------- */
+/* Variações de Animação (Opcional) */
+/* --------------------------------- */
+
+/* Variação para surgir de baixo (já definido acima) */
+.animaçao[data-animacao="fade-up"] {
+    transform: translateY(50px);
+}
+.animaçao[data-animacao="fade-up"] {
+    transform: translateY(0);
+}
+
+/* Variação para surgir da direita */
+.animaçao[data-animacao="fade-right"] {
+    transform: translateX(100px);
+}
+.animaçao[data-animacao="fade-right"] {
+    transform: translateX(0);
+}
+
+
+
+
+
+.animaçao img.imgZezeu {
+  width: 280px;
+  height: auto;
+  border-radius: 5%;
+  object-fit: cover;
+  border: 3px solid aliceblue;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+  
+}
+
+.animaçao p {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .animaçao {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .animaçao img.imgZezeu {
+    width: 200px;
+  }
+
+  .animaçao p {
+    text-align: left;
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+/* Container Principal (o <div>) */
+.sushi-section {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Título */
+.sushi-titulo {
+    font-size: 2em;
+    color: aliceblue; /* Um vermelho japonês para destaque */
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Mensagem de Texto (o <p>) */
+.sushi-mensagem {
+    font-size: 1.2em;
+    color: #444;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Galeria de Imagens (o <div> que envolve as imagens) */
+.sushi-galeria {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 50px;
+    flex-wrap: wrap;
+}
+
+/* 💥 CORREÇÃO PARA TAMANHOS IGUAIS 💥 */
+.imgPratos {
+    width: 100%;       
+    max-width: 300px;  
+    
+    
+    height: 350px; 
+    
+    
+    object-fit: cover; 
+    
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Efeito ao passar o mouse (Hover) */
+.imgPratos:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sushi-galeria {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imgPratos {
+        margin-bottom: 20px;
+        /* Em telas pequenas, podemos usar uma altura maior, ou manter a mesma */
+        height: 250px; 
+    }
+}
+
+
+
+
+
+
+/* ... Seu CSS fora do media query ... */
+
+@media (max-width: 768px) {
+    /* ---------------------- */
+    /* 1. Barra de Navegação */
+    /* ---------------------- */
+    .navbar {
+        /* Muda de linha para coluna */
+        flex-direction: column; 
+        
+        /* Reduz o espaçamento e centraliza tudo */
+        gap: 15px; 
+        padding: 15px 0;
+    }
+
+    /* Ajusta o tamanho da logo (imgGyokai) se for a logo na navbar */
+    .imgGyokai {
+        height: 80px; /* Reduz o tamanho da logo */
+    }
+
+
+    /* ---------------------- */
+    /* 2. Seção de Resumo/Introdução */
+    /* ---------------------- */
+   @media (max-width: 768px) {
+    /* ... outras classes ... */
+
+    /* SEÇÃO DE RESUMO/INTRODUÇÃO */
+   .resumo {
+    display: flex;
+    flex-direction: row; /* imagem à esquerda, texto à direita */
+    /* ... outros estilos de desktop ... */
+}
+
+/* ----------------------------------------------------- */
+/* MEDIA QUERY para Celulares na Vertical (Mais comuns) */
+/* ----------------------------------------------------- */
+@media (max-width: 600px) { /* Usamos 600px para pegar só celulares verticais */
+    .resumo {
+        flex-direction: column; /* Empilha (imagem em cima, texto embaixo) */
+        padding: 40px 20px;
+        text-align: center;
+    }
+    .resumo img.imgZezeu {
+        width: 80%;
+        max-width: 200px; /* Imagem fica centralizada e de tamanho razoável */
+    }
+    .resumo p {
+        text-align: justify; /* Mantém a justificativa do texto */
+        width: 100%;
+    }
+}
+    
+    /* ... outras classes ... */
+}
+
+    /* ---------------------- */
+    /* 3. Seção de Animação (resumo/bloco principal) */
+    /* ---------------------- */
+
+    /* A classe 'animaçao' parece ser usada no container Flex principal (onde tem a imagem e o texto) */
+    .animaçao {
+        flex-direction: column; /* Coloca os elementos em coluna */
+        text-align: center;
+        
+        /* Adiciona um padding nas laterais para não grudar nas bordas do celular */
+        padding: 0 15px;
+    }
+    
+    .animaçao img.imgZezeu {
+        width: 100%; /* Ocupa a largura total do container */
+        max-width: 250px; /* Limita um pouco para não ficar gigante */
+        margin-bottom: 20px; /* Adiciona espaço entre a imagem e o texto */
+    }
+
+    .animaçao p {
+        text-align: center; /* Centraliza o texto (ou left se preferir) */
+        font-size: 1rem;
+    }
+
+
+    /* ---------------------- */
+    /* 4. Seção de Sushi (Galeria de Pratos) */
+    /* ---------------------- */
+    
+    /* Container que tem a mensagem e o título */
+    .sushi-section {
+        margin: 30px 15px; /* Reduz margens e adiciona nas laterais */
+        padding: 10px;
+    }
+
+    .sushi-titulo {
+        font-size: 1.5em; /* Reduz o tamanho do título */
+    }
+    
+    .sushi-mensagem {
+        font-size: 1em; /* Reduz o tamanho do texto */
+        margin-bottom: 20px;
+    }
+
+    .sushi-galeria {
+        flex-direction: column; /* As imagens devem ficar empilhadas */
+        align-items: center;
+        padding: 20px 0;
+        gap: 20px;
+    }
+
+    .imgPratos {
+        width: 90%; /* Ocupa 90% da largura da tela */
+        max-width: 350px; /* Limita o tamanho, se for uma tela maior (como um tablet na vertical) */
+        height: 250px; 
+        margin-bottom: 0;
+    }
+
+}
